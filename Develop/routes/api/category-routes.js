@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const categoryData = await Category.findOne(req.params.id, {
+    const categoryData = await Category.findByPk(req.params.id, {
       inlude: [{ model: Product }],
     });
 
@@ -70,13 +70,15 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id
       },
     });
+    console.log(deleteCategory);
     if (!deleteCategory) {
     res.status(404).json({ message: 'Id not found' });
     return;
     }
+    res.status(200).json(deleteCategory);
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
+// respond with a 200 just after the curly brace on line 77
 module.exports = router;
