@@ -30,4 +30,22 @@ npm run seed OR node seeds/index.js
 Next start the server by using...
 ```
 npm start OR node server.js
-``
+```
+
+
+Once the server has started, the user can perform RESTful CRUD operations to Create data (POST), Retrieve data (GET), Update data (PUT), Delete data (DELETE). 
+
+You can use the GET method to request an item in the database by a specific ID. However, PUT and DELETE need a specified path such as...
+```
+api/categories/:id OR api/products/:id OR api/tags/:id
+```
+IMPORTANT: You must use JSON format when using the POST or PUT method to add or change data.
+
+##Technologies
+- npm package Express.js
+- npm package Sequelize
+- npm package dotenv
+- npm package MySQL 2
+- Insomnia
+
+
